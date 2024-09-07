@@ -21,7 +21,7 @@
   background-color: #2f3279;
 }
 
-body {
+body,html {
   width: 100%;
   height: 100vh;
 
@@ -39,19 +39,18 @@ body {
 }
 
 main {
-  width: 480px;
-  border-radius: 1.5rem;
-
+  width: 482px;
+  border-radius: 1.rem;
   border: 1px solid #2f3279;
   overflow-y: hidden;
 }
 
 form {
   background-color: #141534;
-
+  position: relative;
   display: flex;
   flex-direction: column;
-
+  z-index: 9999 !important;
   padding: 3.5rem 4rem;
 }
 
@@ -131,14 +130,25 @@ button:focus {
 }
 
 footer {
+  position: absolute;
+  width: 480px;
+  border-radius: 0 0 2rem 2rem;
   background-color: #1f2151;
-  padding: 2.5rem;
-  max-height: 196px;
+  padding: 2rem;
+ 
+ 
 
   text-align: center;
-  display: none;
+  display: block;
 
-  overflow-y: scroll;
+  
+  transform: translateY(-100%);
+  transition: .25s ease;
+}
+
+.show-footer{
+  transition: .6s;
+  transform: translateY(-15%);
 }
 
 .show-result {
