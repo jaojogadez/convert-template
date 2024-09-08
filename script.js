@@ -1,3 +1,8 @@
+// Cotação de moedas
+const USD = 5.6
+const EUR = 6.19
+const GPB = 7.35
+
 // Elements
 const form = document.querySelector("form") // formulário
 const input = document.getElementById("amount") // input
@@ -15,9 +20,17 @@ input.addEventListener("input", () => {
 // Evento de envio do form
 form.onsubmit = (e) => {
     e.preventDefault() // previne o recarregamento da tela
-    console.log(currency.value)
-
+    //console.log(currency.value + " " + input.value)
+    switch(currency.value){
+        case "USD":
+            input.value *= 5.6
+            console.log(input.value, 5.6)
+            break
+    }
     footer.classList.add("show-footer")
 }
 
-//
+// Funciton to convert the currency
+function convertCurrency(input, price, symbol){
+    
+}
