@@ -7,7 +7,7 @@ const GPB = 7.35
 const form = document.querySelector("form") // formulário
 const input = document.getElementById("amount") // input
 const currency = document.getElementById("currency") // select
-const footer = document.querySelector("footer") // footer
+const footer = document.querySelector("main footer") // footer
 
 
 // Pega o valor do Input enquanto o user digita e não deixa digitar caracteres, somente números
@@ -32,10 +32,21 @@ form.onsubmit = (e) => {
             convertCurrency(input.value, GPB, "£" )
             break
     }
-    footer.classList.add("show-footer")
+    //footer.classList.add("show-footer")
 }
 
 // Funciton to convert the currency
 function convertCurrency(amount, price, symbol){
     console.log(amount, price, symbol)
+    try {
+        // Exibe o footer
+        footer.classList.add("show-footer")
+    } catch (error) {
+        // Esconde o footer
+        footer.classList.remove("show-footer")
+
+        console.log(error)
+        alert("Não foi possível converter. Por favor, tente novamente.")
+        
+    }
 }
