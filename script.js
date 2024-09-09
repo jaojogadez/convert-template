@@ -2,6 +2,7 @@
 const USD = 5.6
 const EUR = 6.19
 const GPB = 7.35
+const ARS = 0.0059
 
 // Elements
 const form = document.querySelector("form") // formulário
@@ -32,6 +33,9 @@ form.onsubmit = (e) => {
             break
         case "GBP":
             convertCurrency(input.value, GPB, "£" )
+            break
+        case "ARS":
+            convertCurrency(input.value, ARS, "$")
             break
     }
     //footer.classList.add("show-footer")
