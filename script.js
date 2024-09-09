@@ -8,6 +8,8 @@ const form = document.querySelector("form") // formulário
 const input = document.getElementById("amount") // input
 const currency = document.getElementById("currency") // select
 const footer = document.querySelector("main footer") // footer
+const description = document.getElementById("description")
+const result = document.getElementById("result")
 
 
 // Pega o valor do Input enquanto o user digita e não deixa digitar caracteres, somente números
@@ -39,14 +41,21 @@ form.onsubmit = (e) => {
 function convertCurrency(amount, price, symbol){
     console.log(amount, price, symbol)
     try {
-        // Exibe o footer
-        footer.classList.add("show-footer")
-    } catch (error) {
-        // Esconde o footer
-        footer.classList.remove("show-footer")
+        description.textContent = `${symbol} 1 = R$${price}` // atualiza a descrição automaticamente
 
+        footer.classList.add("show-footer") // Exibe o footer
+    } catch (error) {
+        footer.classList.remove("show-footer") // Esconde o footer
         console.log(error)
         alert("Não foi possível converter. Por favor, tente novamente.")
         
     }
+}
+
+
+// função para fazer conta
+function formatCurrencyBRL(value){
+    return Number(value).toLocaleString("pt-BR",{
+        
+    })
 }
