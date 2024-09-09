@@ -41,9 +41,20 @@ form.onsubmit = (e) => {
 function convertCurrency(amount, price, symbol){
     console.log(amount, price, symbol)
     try {
-        description.textContent = `${symbol} 1 = R$${price}` // atualiza a descrição automaticamente
+        description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}` // atualiza a descrição automaticamente
+
+        let total = amount * price // Calcula o total
+        console.log(`Total: ${total}`)
+
+        // Verifica se o total não é um número
+        if (isNaN(total)){
+            return alert("Por favor, digite o valor corretamente.")
+        }
+
+        result.innerHTML = `${formatCurrencyBRL(total).replace("R$", "")} Reais`
 
         footer.classList.add("show-footer") // Exibe o footer
+
     } catch (error) {
         footer.classList.remove("show-footer") // Esconde o footer
         console.log(error)
@@ -53,9 +64,11 @@ function convertCurrency(amount, price, symbol){
 }
 
 
-// função para fazer conta
+// formata a moeda ( adiciona o 'R$ ')
 function formatCurrencyBRL(value){
+    // converte para número para usar o toLocateString para formatar no padrão BRL (R$ 00,00)
     return Number(value).toLocaleString("pt-BR",{
-        
+        style: "currency",
+        currency: "BRL",
     })
 }
