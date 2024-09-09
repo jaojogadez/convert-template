@@ -23,14 +23,19 @@ form.onsubmit = (e) => {
     //console.log(currency.value + " " + input.value)
     switch(currency.value){
         case "USD":
-            input.value *= 5.6
-            console.log(input.value, 5.6)
+            convertCurrency(input.value, USD, "US$")
+            break
+        case "EUR":
+            convertCurrency(input.value, EUR, "€" )
+            break
+        case "GBP":
+            convertCurrency(input.value, GPB, "£" )
             break
     }
     footer.classList.add("show-footer")
 }
 
 // Funciton to convert the currency
-function convertCurrency(input, price, symbol){
-    
+function convertCurrency(amount, price, symbol){
+    console.log(amount, price, symbol)
 }
