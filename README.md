@@ -2,6 +2,10 @@
 
 Bem-vindo ao **Convert Template**! Este é um conversor de moedas simples e dinâmico, desenvolvido para facilitar a conversão de valores de **USD, EUR, GBP e ARS** para **BRL (Real brasileiro)**.
 
+![Projeto  - Convert Template](https://github.com/user-attachments/assets/fdc18491-cfb3-42cb-8532-4f02142ed0ff)
+
+🔗 Acesse o projeto: [https://jaojogadez.github.io/convert-template/]
+
 ## 💡 Funcionalidades
 
 - ✨ **Conversão de Moedas**: Converte valores de diferentes moedas para reais em segundos.
